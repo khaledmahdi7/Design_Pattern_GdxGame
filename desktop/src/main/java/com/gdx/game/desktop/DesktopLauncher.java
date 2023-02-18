@@ -12,3 +12,6 @@ public class DesktopLauncher {
 		new Lwjgl3Application(new GdxGame(), config);
 	}
 }
+
+
+//ryad: hello did it worked 20:37
