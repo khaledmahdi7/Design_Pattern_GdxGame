@@ -1,6 +1,6 @@
 package com.gdx.game.inventory;
 
-public class Test {
+public class TestDecorator {
     public static void main(String[] args) {
         InventoryItem item = InventoryItemFactory.createItem("leftArm", "red");
         System.out.println(item.getItemShortDescription()); // "Left arm (red)"

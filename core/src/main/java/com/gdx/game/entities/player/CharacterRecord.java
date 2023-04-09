@@ -64,24 +64,7 @@ public class CharacterRecord {
         return Integer.parseInt(entity.getEntityConfig().getPropertyValue(EntityConfig.EntityProperties.ENTITY_DEFENSE_POINTS.toString()));
     }
 
-    public void takeDamage(int damage) {
-        int totalDamage = damage - baseDefense;
-        if (totalDamage < 0) {
-            totalDamage = 0;
-        }
-        int currentHealth = baseHP - totalDamage;
-        if (currentHealth < 0) {
-            currentHealth = 0;
-        }
-    }
 
 
-    public void attack(CharacterRecord mage) {
-        // Choose attack strategy (in this example, we use AdvanceStrategy1)
-        AttackStrategy1 attackStrategy = new AdvanceStrategy1();
-
-        // Attack the mage
-        attackStrategy.attack(this, mage, this);
-    }
 }
 

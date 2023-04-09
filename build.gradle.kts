@@ -60,7 +60,7 @@ project(":core") {
         implementation("com.crashinvaders.vfx:gdx-vfx-core:$gdxVfxVersion")
         implementation("com.crashinvaders.vfx:gdx-vfx-effects:$gdxVfxVersion")
         implementation("ch.qos.logback:logback-classic:$logbackVersion")
-        testImplementation("com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion")
         implementation("com.github.kokorin.jaffree:jaffree:0.9.4")
+        testImplementation("com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion")
     }
 }
