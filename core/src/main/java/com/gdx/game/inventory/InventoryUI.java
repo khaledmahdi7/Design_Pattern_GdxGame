@@ -520,4 +520,18 @@ public class InventoryUI extends Window implements InventorySubject, InventorySl
             observer.onNotify(value, event);
         }
     }
+
+   //Modifier la méthode "displayItem()" de la classe "InventoryUI"
+   // pour afficher la couleur de l'objet en utilisant la méthode "getColor()" de l'objet décoré.
+        public void displayItem(InventoryItem item) {
+            System.out.println(item.getItemShortDescription() + " - " + item.getItemValue() + " gold coins");
+            if (item instanceof InventoryItemDecorator) {
+                InventoryItemDecorator decorator = (InventoryItemDecorator) item;
+                System.out.println("- Color: " + decorator.getColor());
+            }
+        }
+
+        // ...
+
+
 }

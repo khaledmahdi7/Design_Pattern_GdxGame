@@ -22,7 +22,7 @@ import com.gdx.game.profile.ProfileManager;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-public class Entity {
+public  class Entity {
 
 	public enum Direction {
 		UP,

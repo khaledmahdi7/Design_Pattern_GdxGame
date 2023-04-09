@@ -84,7 +84,6 @@ public class EntityFactory {
         if(instance == null) {
             instance = new EntityFactory();
         }
-
         return instance;
     }
 

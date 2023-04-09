@@ -5,8 +5,8 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 public class InventoryItem extends Image {
-
-    public enum ItemAttribute {
+// possède plusieurs attributs et méthodes pour gérer les objets de l'inventaire d'un joueur.
+    public enum ItemAttribute {//un entier pour stocker les attributs de l'objet
         CONSUMABLE(1),
         EQUIPPABLE(2),
         STACKABLE(4);
@@ -23,7 +23,7 @@ public class InventoryItem extends Image {
 
     }
 
-    public enum ItemUseType {
+    public enum ItemUseType {//un entier pour stocker le type d'utilisation de l'objet
         ITEM_RESTORE_HEALTH(1),
         ITEM_RESTORE_MP(2),
         ITEM_DAMAGE(4),

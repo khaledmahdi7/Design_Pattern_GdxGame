@@ -38,6 +38,43 @@ public class InventoryItemFactory {
         }
     }
 
+//Modifier la méthode "createItem()" de la classe "InventoryItemFactory"
+// pour créer des objets "ColorDecorator" en fonction de la couleur passée en paramètre.
+public static InventoryItem createItem(String type, String color) {
+    InventoryItem item = null;
+
+    switch (type) {
+        case "leftArm":
+           item = new InventoryItemLeftArm();
+            break;
+        case "rightArm":
+           item = new InventoryItemRightArm();
+            break;
+        default:
+            throw new IllegalArgumentException("Invalid type: " + type);
+    }
+
+    if (color != null && !color.isEmpty()) {
+        if (color != null && !color.isEmpty()) {
+            switch (color) {
+                case "red":
+                    item = new RedDamageDecorator(item);
+                    break;
+                case "blue":
+                    item = new BlueDamageDecorator(item);
+                    break;
+                case "white":
+                    item = new WhiteDamageDecorator(item);
+                    break;
+                default:
+                    throw new IllegalArgumentException("Invalid color: " + color);
+            }
+        }
+
+    }
+
+    return item;
+}
     public InventoryItem getInventoryItem(ItemTypeID inventoryItemType) {
         InventoryItem item = new InventoryItem(inventoryItemList.get(inventoryItemType));
         item.setDrawable(new TextureRegionDrawable(ITEMS_TEXTURE_ATLAS.findRegion(item.getItemTypeID().toString())));
@@ -45,13 +82,6 @@ public class InventoryItemFactory {
         return item;
     }
 
-    /*
-    public void testAllItemLoad() {
-        for(ItemTypeID itemTypeID : ItemTypeID.values()) {
-            InventoryItem item = new InventoryItem(inventoryItemList.get(itemTypeID));
-            item.setDrawable(new TextureRegionDrawable(PlayerHUD.itemsTextureAtlas.findRegion(item.getItemTypeID().toString())));
-            item.setScaling(Scaling.none);
-        }
-    }*/
+
 
 }
