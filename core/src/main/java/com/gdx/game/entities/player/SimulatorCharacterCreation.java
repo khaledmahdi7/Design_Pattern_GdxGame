@@ -4,6 +4,10 @@ import com.gdx.game.entities.npc.NpcCharacterFactory;
 
 public class SimulatorCharacterCreation {
     public static void  main(String[]args) {
+
+        JournalisationSingleton log = JournalisationSingleton.getInstance();
+
+
         CharacterFactory PlayableCharacterFactory = new PlayableCharacterFactory();
         Unit CLERIC = PlayableCharacterFactory.LoadUnit(TypeCharacter.CLERIC);
         Unit GRAPPLER = PlayableCharacterFactory.LoadUnit(TypeCharacter.GRAPPLER);
@@ -11,6 +15,9 @@ public class SimulatorCharacterCreation {
         CharacterFactory NpcCharacterFactory= new NpcCharacterFactory();
         Unit Enemy= NpcCharacterFactory.LoadUnit(TypeCharacter.ENEMY);
         Unit NPC= NpcCharacterFactory.LoadUnit(TypeCharacter.NPC);
+
+        log.journaliser("begin Character Creation testing simulation");
+
 
         System.out.println("********************");
         System.out.println("ENEMY specifics:");
@@ -32,5 +39,8 @@ public class SimulatorCharacterCreation {
         System.out.println("********************");
         System.out.println("GRAPPLER ");
         System.out.println(GRAPPLER);
+
+        System.out.println(JournalisationSingleton.getInstance().terminerJournal());
+
     }
 }

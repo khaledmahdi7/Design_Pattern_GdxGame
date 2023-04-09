@@ -9,6 +9,11 @@ public class SimulationStrategyPattern {
 
     public static void main(String[] args) {
 
+        JournalisationSingleton log = JournalisationSingleton.getInstance();
+
+        log.journaliser("begin Character Attack testing simulation");
+
+
         // Création des personnages et choix de leur stratégie d'attaque
         Character player1 = new Character("Joueur 1", new BasicAttack());
         Character player2 = new Character("Joueur 2", new AdvancedAttack());
@@ -29,5 +34,9 @@ public class SimulationStrategyPattern {
         } else {
             System.out.println("Match nul !");
         }
+
+        System.out.println(JournalisationSingleton.getInstance().terminerJournal());
+
+
     }
 }
